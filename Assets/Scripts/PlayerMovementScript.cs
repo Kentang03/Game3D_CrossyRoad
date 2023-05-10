@@ -2,11 +2,19 @@
 using System.Collections;
 
 public class PlayerMovementScript : MonoBehaviour {
+
     public bool canMove = false;
+
+    //time for Jump
     public float timeForMove = 0.2f;
+
+    //Jump
     public float jumpHeight = 1.0f;
 
+    //Jump Distance Forward And BackWard
     public int jumpFBScale =  1;
+
+    //Jump Distance Forward And BackWard
     public int jumpRLScale =  -1;
 
     public int minX = -4;
@@ -71,18 +79,18 @@ public class PlayerMovementScript : MonoBehaviour {
 			
 			if (Mathf.Abs(z) > Mathf.Abs(x)) {
 				if (z > 0)
-					Move(new Vector3(0, 0, 3));
+					Move(new Vector3(0, 0, jumpFBScale));
                 else
-					Move(new Vector3(0, 0, -3));
+					Move(new Vector3(0, 0, jumpRLScale));
 			}
             else { // (Mathf.Abs(z) < Mathf.Abs(x))
 				if (x > 0) {
 					if (Mathf.RoundToInt(current.x) < maxX)
-						Move(new Vector3(3, 0, 0));
+						Move(new Vector3(jumpFBScale, 0, 0));
 				}
                 else { // (x < 0)
 					if (Mathf.RoundToInt(current.x) > minX)
-						Move(new Vector3(-3, 0, 0));
+						Move(new Vector3(jumpRLScale, 0, 0));
 				}
 			}
         }
