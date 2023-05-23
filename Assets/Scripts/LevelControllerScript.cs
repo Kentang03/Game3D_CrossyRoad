@@ -46,7 +46,7 @@ public class LevelControllerScript : MonoBehaviour {
         // Remove lines based on player position.
         foreach (var line in new List<GameObject>(lines.Values)) {
             var lineZ = line.transform.position.z;
-            if (lineZ < playerZ - lineBehind) {
+            if (lineZ < playerZ - lineBehind){
                 lines.Remove((int)lineZ);
                 Destroy(line);
             }
@@ -57,8 +57,8 @@ public class LevelControllerScript : MonoBehaviour {
         // TODO This kind of reset is dirty, refactor might be needed.
         if (lines != null) {
             foreach (var line in new List<GameObject>(lines.Values)) {
-                Destroy(line);
-            }
+               Destroy(line);
+               }
             Start();
         }
     }
