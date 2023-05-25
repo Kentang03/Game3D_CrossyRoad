@@ -1,11 +1,32 @@
 fileFormatVersion: 2
-guid: 94a522a486aa0dd41866ca82c7638ea7
+guid: a03a733865528a64ea79b54e9c63ac0e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: -203655887218126122
-    second: mixamo.com
+      74: 3699463518991864318
+    second: Cylinder.003|Cylinder.002Action
+  - first:
+      74: -7579257255991434205
+    second: Cylinder.003|Cylinder.002Action.001
+  - first:
+      74: 8633508300166330344
+    second: Cylinder.003|Cylinder.002Action.002
+  - first:
+      74: 6577427120723551632
+    second: Cylinder.003|Cylinder.002Action.003
+  - first:
+      74: -4216732959981531545
+    second: Cylinder.004|Cylinder.002Action
+  - first:
+      74: 3078864700120743561
+    second: Cylinder.004|Cylinder.002Action.001
+  - first:
+      74: 6757724376000445009
+    second: Cylinder.004|Cylinder.002Action.002
+  - first:
+      74: 5155427671928947614
+    second: Cylinder.004|Cylinder.002Action.003
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -17,7 +38,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
+    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -34,36 +55,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: mixamo.com
-      takeName: mixamo.com
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 24
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -76,7 +68,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 0
+    nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -131,7 +123,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
