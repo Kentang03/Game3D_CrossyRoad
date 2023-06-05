@@ -35,6 +35,7 @@ public class PlayerMovementScript : MonoBehaviour {
 
     private Rigidbody body;
     private GameObject mesh;
+    Animator m_Animator;
 
     private GameStateControllerScript gameStateController;
     private int score;
@@ -43,6 +44,7 @@ public class PlayerMovementScript : MonoBehaviour {
         current = transform.position;
         moving = false;
         startY = transform.position.y;
+        m_Animator = gameObject.GetComponent<Animator>();
 
         body = GetComponentInChildren<Rigidbody>();
 
@@ -133,22 +135,22 @@ public class PlayerMovementScript : MonoBehaviour {
         body.isKinematic = true;
         print(MoveDirection);
 
-        switch (MoveDirection) {
-            case "north":
-                mesh.transform.rotation = Quaternion.Euler(0, 0, 0);
-                break;
-            case "south":
-                mesh.transform.rotation = Quaternion.Euler(0, 180, 0);
-                break;
-            case "east":
-                mesh.transform.rotation = Quaternion.Euler(0, 270, 0);
-                break;
-            case "west":
-                mesh.transform.rotation = Quaternion.Euler(0, 90, 0);
-                break;
-            default:
-                break;
-        }
+        // switch (MoveDirection) {
+        //     case "north":
+        //         mesh.transform.rotation = Quaternion.Euler(0, 0, 0);
+        //         break;
+        //     case "south":
+        //         mesh.transform.rotation = Quaternion.Euler(0, 180, 0);
+        //         break;
+        //     case "east":
+        //         mesh.transform.rotation = Quaternion.Euler(0, 270, 0);
+        //         break;
+        //     case "west":
+        //         mesh.transform.rotation = Quaternion.Euler(0, 90, 0);
+        //         break;
+        //     default:
+        //         break;
+        // }
 
         // Rotate arm and leg.
         foreach (var o in leftSide) {
@@ -223,16 +225,20 @@ public class PlayerMovementScript : MonoBehaviour {
 
     public void GameOver() {
         // When game over, disable moving.
+       
+        
+        m_Animator.SetBool("isDeath", true);
+        m_Animator.SetTrigger("isDeath");
         canMove = false;
-
         // Call GameOver at game state controller (instead of sending messages).
         gameStateController.GameOver();
+        
     }
 
     public void Reset() {
         // TODO This kind of reset is dirty, refactor might be needed.
         transform.position = new Vector3(0, 1, 0);
-        transform.localScale = new Vector3(1, 1, 1);
+        
         transform.rotation = Quaternion.identity;
         score = 0;
     }
