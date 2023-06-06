@@ -5,6 +5,9 @@ using System.Collections.Generic;
 public class GenericGridObjectGeneratorScript : MonoBehaviour {
     public Vector3 minPosition;
     public Vector3 maxPosition;
+    public int rotationX;
+    public int rotationY;
+    public int rotationZ;
     public Vector3 gridSize = new Vector3(1, 1, 3);
 
     public float density = 0.12f;
@@ -25,6 +28,8 @@ public class GenericGridObjectGeneratorScript : MonoBehaviour {
                     if (generate) {
                         GameObject prefab = prefabs[Random.Range(0, prefabs.Length)];
                         var o = (GameObject)Instantiate(prefab, relative ? transform.position + new Vector3(x, y, z) : new Vector3(x, y, z), Quaternion.identity);
+                        o.transform.rotation = Quaternion.Euler(rotationX, rotationY, rotationZ);
+
 
                         generatedObjects.Add(o);
                         OnInstantiate(o);
